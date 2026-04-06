@@ -6403,7 +6403,7 @@ function Library:CreateWindow(WindowInfo)
 
         if WindowInfo.BackgroundImage then
             BackgroundImage = New("ImageLabel", {
-                Image = WindowInfo.BackgroundImage,
+                Texture = WindowInfo.BackgroundImage,
                 Position = UDim2.fromScale(0, 0),
                 Size = UDim2.fromScale(1, 1),
                 ScaleType = Enum.ScaleType.Crop,
