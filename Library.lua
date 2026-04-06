@@ -6409,7 +6409,7 @@ function Library:CreateWindow(WindowInfo)
                 ScaleType = Enum.ScaleType.Crop,
                 ZIndex = 999,
                 BackgroundTransparency = 1,
-                ImageTransparency = 0.75,
+                ImageTransparency = WindowInfo.BackgroundImageTransparency or 0.75,
                 Parent = MainFrame,
             })
 
