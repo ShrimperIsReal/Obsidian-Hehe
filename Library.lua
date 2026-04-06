@@ -6729,6 +6729,13 @@ function Library:CreateWindow(WindowInfo)
             BackgroundImage.Image = Image
             WindowInfo.BackgroundImage = Image
         end
+        function Window:SetBackgroundImageTransparency(Transparency: number)
+            assert(typeof(Transparency) == "number", "Expected number for Transparency got: " .. typeof(Transparency))
+            assert(Transparency >= 0 and Transparency <= 1, "Transparency must be between 0 and 1.")
+
+            BackgroundImage.ImageTransparency = Transparency
+            WindowInfo.BackgroundImageTransparency = Transparency
+        end
     end
 
     function Window:SetFooter(footer: string)
