@@ -6401,15 +6401,15 @@ function Library:CreateWindow(WindowInfo)
             Parent = MainFrame,
         })
 
-        if WindowInfo.BGI then
+        if WindowInfo.BackgroundImage then
             BackgroundImage = New("ImageLabel", {
-                Image = WindowInfo.BGI,
+                Image = WindowInfo.BackgroundImage,
                 Position = UDim2.fromScale(0, 0),
                 Size = UDim2.fromScale(1, 1),
                 ScaleType = Enum.ScaleType.Crop,
                 ZIndex = 999,
                 BackgroundTransparency = 1,
-                ImageTransparency = WindowInfo.BGIT or 0.75,
+                ImageTransparency = 0.75,
                 Parent = MainFrame,
             })
 
