@@ -45,6 +45,13 @@ do
     -- if not isfolder(ThemeManager.Folder) then makefolder(ThemeManager.Folder) end
 
     ThemeManager.Library = nil
+	local function Notify(message, length)
+	  self.Library:Notify({
+		Title       = "Project Lexia",
+		Description = message or "how the fuck",
+		BigIcon     = "rbxassetid://84822901806285",
+		Time        = length or 2,
+	})
     ThemeManager.AppliedToTab = false
     ThemeManager.BuiltInThemes = {
         ["Default"] = {
@@ -125,15 +132,6 @@ do
         self.Library = library
     end
 
-    local function Notify(message, length)
-	  self.Library:Notify({
-		Title       = "Project Lexia",
-		Description = message or "how the fuck",
-		BigIcon     = "rbxassetid://84822901806285",
-		Time        = length or 2,
-	})
-end
-
     --// Folders \\--
     function ThemeManager:GetPaths()
         local paths = {}
@@ -188,7 +186,7 @@ end
             if idx == "VideoLink" then
                 continue
             elseif idx == "FontFace" then
-                self.Library:SetFont(Enum.Font[val])
+                :SetFont(Enum.Font[val])
 
                 if self.Library.Options[idx] then
                     self.Library.Options[idx]:SetValue(val)
